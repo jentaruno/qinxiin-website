@@ -8,6 +8,7 @@ const assetsDirectory = path.join(process.cwd(), 'assets/');
 
 export function getSectionNames() {
   const folderNames = fs.readdirSync(assetsDirectory)
+  return folderNames
 }
 
 export function getSortedPostsData(dir) {

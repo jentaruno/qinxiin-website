@@ -17,7 +17,7 @@ export default function Home({allPostsData}) {
             <section className={`${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Coding</h2>
                 <div className={utilStyles.list}>
-                    {allPostsData[0].map(({id, stack, link, date, title, desc}) => (
+                    {allPostsData["coding"].map(({id, stack, link, date, title, desc}) => (
                         <div className={utilStyles.listItem} key={id}>
                             <div className={utilStyles.listThumbnail}>
                                 <img alt={id} src={`./images/${id}.png`}></img>
@@ -56,11 +56,12 @@ export default function Home({allPostsData}) {
 }
 
 export async function getStaticProps() {
-    let folderNames = getSectionNames()
-    let allPostsData = new Map()
-    folderNames.map(folderName => {
-         allPostsData.set(folderName, getSortedPostsData(folderName))
-     })
+    // let folderNames = getSectionNames()
+    // let allPostsData = new Map()
+    // folderNames.map(folderName => {
+    //      allPostsData.set(folderName, getSortedPostsData(folderName))
+    //  })
+    let allPostsData = getSortedPostsData("coding")
     return {
         props: {
             allPostsData
