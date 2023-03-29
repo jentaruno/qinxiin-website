@@ -29,7 +29,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, folder }) {
   const postData = await getPostData(params.id)
   return {
     props: {

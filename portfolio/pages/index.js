@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import {getSortedPostsData} from '../lib/posts'
+import {getSectionNames, getSortedPostsData} from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import path from "path";
@@ -17,7 +17,7 @@ export default function Home({allPostsData}) {
             <section className={`${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Coding</h2>
                 <div className={utilStyles.list}>
-                    {allPostsData.map(({id, stack, link, date, title, desc}) => (
+                    {allPostsData[0].map(({id, stack, link, date, title, desc}) => (
                         <div className={utilStyles.listItem} key={id}>
                             <div className={utilStyles.listThumbnail}>
                                 <img alt={id} src={`./images/${id}.png`}></img>
@@ -56,11 +56,11 @@ export default function Home({allPostsData}) {
 }
 
 export async function getStaticProps() {
-    // const folderNames = fs.readdirSync(assetsDirectory)
-    let allPostsData = getSortedPostsData("coding")
-    // folderNames.map(folderName => {
-    //     allPostsData.push(getSortedPostsData(folderName))
-    // })
+    let folderNames = getSectionNames()
+    let allPostsData = new Map()
+    folderNames.map(folderName => {
+         allPostsData.set(folderName, getSortedPostsData(folderName))
+     })
     return {
         props: {
             allPostsData

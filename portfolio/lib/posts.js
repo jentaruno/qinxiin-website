@@ -6,9 +6,13 @@ import html from 'remark-html'
 
 const assetsDirectory = path.join(process.cwd(), 'assets/');
 
+export function getSectionNames() {
+  const folderNames = fs.readdirSync(assetsDirectory)
+}
+
 export function getSortedPostsData(dir) {
   // Get file names under /posts
-  const postsDirectory = assetsDirectory + dir;
+  const postsDirectory = assetsDirectory + dir
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map(fileName => {
     // Remove ".md" from file name to get id
