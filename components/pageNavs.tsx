@@ -3,7 +3,9 @@ import React, {useState} from 'react';
 import {motion} from "framer-motion";
 import Image from 'next/image'
 
-const Navbar = () => {
+const Navbar = (props: {
+    color?: string
+}) => {
     const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
@@ -11,17 +13,18 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        ['Portfolio', '/portfolio'],
-        ['Commission', '/commission/'],
-        ['About', '/about'],
-        ['Contact', '/contact'],
+        ['Home', '/'],
+        ['Portfolio', '/portfolio/'],
+        ['Project', '/project'],
+        ['Commission', '/commission'],
     ]
+
+    // TODO: change text color
 
     return (
         <div
-            className={`w-full mt-0 flex flex-row justify-between sm:justify-center bg-white ${
-                showMenu ? 'drop-shadow-lg' : 'drop-shadow-none'
-            }`}>
+            className={`w-full mt-0 flex flex-row justify-between sm:justify-center bg-white
+            ${showMenu ? 'drop-shadow-lg' : 'drop-shadow-none'}`}>
             <div className="block sm:hidden flex flex-row items-center pl-2 py-2">
                 <div>
                     <button

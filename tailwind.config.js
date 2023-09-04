@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+// TODO: headers and font sizes
+
 module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',

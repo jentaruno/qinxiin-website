@@ -11,7 +11,7 @@ export const metadata = {
 const unbounded = localFont({
     src: [
         {
-            path: '../public/fonts/Unbounded-Regular.woff2',
+            path: '../public/fonts/Unbounded-Blond.woff2',
             weight: '400'
         },
         {
