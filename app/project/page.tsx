@@ -7,7 +7,7 @@ export default function Portfolio() {
         <div className={'flex flex-col w-full'}>
             <div className={'bg-[#252530]'}>
                 <div className={'flex flex-col m-36 text-white text-center'}>
-                    <h1 className={''}>
+                    <h1>
                         Where the Soul Finds Its Voice
                     </h1>
                     <p>SILENT BLUES (X ¥) is a social media—based illustrated mental health campaign which will tackle

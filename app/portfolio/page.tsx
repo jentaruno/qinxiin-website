@@ -4,12 +4,12 @@ import {useState} from "react";
 
 export default function Portfolio() {
     const sections = ["design", "digital", "traditional"];
-    const [currentSection, setCurrentSection] = useState(0);
+    const [currentSection, setCurrentSection] = useState(1);
 
     // TODO: animate h2 and add background
 
     return (
-        <div>
+        <div className={"flex flex-col items-center"}>
             <div className={"flex flex-row space-x-2"}>
                 {sections.map((e, i) =>
                     <h2
